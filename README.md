@@ -1,2 +1,9 @@
-# TQS_116718
-Testing and Software Quality
+# TQS
+
+Repository for Software Testing and Quality assignments
+
+## Student details
+
+| Name | Student ID   | 
+| :-------- | :------- | 
+| Malwina Schonhofer | 116718 | 
