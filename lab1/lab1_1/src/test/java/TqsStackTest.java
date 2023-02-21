@@ -34,6 +34,17 @@ class TqsStackTest {
         assertTrue(stack.isEmpty(), "Size of the stack is greater than n after n pushes.");
     }
 
+    @Test
+    public void testPushNElements() {
+        final int n = 5;
+
+        for (int i = 0; i < n; i++) {
+            stack.push(i);
+        }
+
+        assertFalse(stack.isEmpty());
+        assertEquals(n, stack.size());
+    }
     // 4.  If one pushes x then pops, the value popped is x.
     @Test
     void pop(){
