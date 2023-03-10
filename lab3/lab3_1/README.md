@@ -58,5 +58,4 @@ The "application-integrationtest.properties" file can be used to provide configu
 
 **e) The sample project demonstrates three test strategies to assess an API (C, D and E) developed with SpringBoot. Which are the main/key differences?**
 
-
-
+The main differences between these strategies are the level of integration and the scope of the test. @WebMvcTest is the most lightweight and focused strategy, as it only verifies the behavior of the controller. EmployeeRestControllerIT and EmployeeRestControllerTemplateIT are both integration tests that involve multiple components of the application, but the former uses MockMvc for simulating requests, while the latter uses a real REST client. The use of a real REST client adds more complexity to the test, as it involves request and response marshaling/unmarshaling. On the other hand, it provides a more realistic scenario for testing the API's behavior.
