@@ -27,7 +27,7 @@ public class CarManagerService {
         return carRepository.findAll();
     }
 
-    public Optional<Car> getCarDetails(Long carId) {
-        return Optional.of(carRepository.findByCarId(carId) );
+    public Optional<Car> getCarDetails(Long carId){
+        return carRepository.findByCarId(carId);
     }
 }
