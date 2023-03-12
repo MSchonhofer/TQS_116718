@@ -14,6 +14,7 @@ import tqs.cars.services.CarManagerService;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.*;
@@ -73,5 +74,20 @@ class CarControllerTest {
                 .andExpect(jsonPath("$[2].maker", is(car3.getMaker())));
 
         verify(service, times(1)).getAllCars();
+    }
+
+    @Test
+    public void givenId_thenCheckIfValid() throws Exception {
+        Car car1 = new Car("Tesla", "X");
+        car1.setCarId(1L);
+
+        when(service.getCarDetails(car1.getCarId())).thenReturn(Optional.of(car1));
+
+        mvc.perform(get("/api/cars/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("maker").value("Tesla"))
+                .andExpect(jsonPath("model").value("X"));
+
+        verify(service, times(1)).getCarDetails(car1.getCarId());
     }
 }
