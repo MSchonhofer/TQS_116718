@@ -24,5 +24,9 @@ public class Library {
         }).sorted(Comparator.comparing(Book::getPublished).reversed()).collect(Collectors.toList());
     }
 
-
+    public List<Book> findBooksByAuthor(final String author){
+        return store.stream().filter(book -> {
+            return book.getAuthor().contains(author);
+        }).collect(Collectors.toList());
+    }
 }

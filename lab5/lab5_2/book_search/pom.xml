@@ -31,7 +31,6 @@
                 <groupId>info.cukes</groupId>
                 <artifactId>cucumber-junit</artifactId>
                 <version>${cucumber.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
@@ -88,15 +87,15 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>3.0.10</version>
+            <version>3.0.6</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
