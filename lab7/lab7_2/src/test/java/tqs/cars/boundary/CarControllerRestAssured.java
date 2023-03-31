@@ -109,6 +109,8 @@ public class CarControllerRestAssured {
     @Test
     public void givenId_thenCheckIfInvalid() throws Exception {
 
+        when(service.getCarDetails(Mockito.anyLong())).thenReturn(Optional.empty());
+
         RestAssuredMockMvc
                 .given()
                 .when()
