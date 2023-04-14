@@ -10,7 +10,6 @@ import tqsdemo.employeemngr.service.EmployeeService;
 import java.util.List;
 
 @Service
-//@Transactional
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired

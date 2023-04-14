@@ -1,0 +1,81 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Air Quality App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+    </style>
+
+</head>
+<body>
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="margin-bottom: 20px">
+    <div class="container">
+        <a class="navbar-brand mx-auto" href="#" style="position: absolute; left: 50%; transform: translateX(-50%); font-size: 28px; ">Air Quality Application</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ml-auto" href="/" style="margin-left: auto; font-size: 18px;">Search City AQI</a>
+                <a class="nav-item nav-link" href="/cache" style="font-size: 18px;">Cache Stats</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page -->
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-6 text-center">
+                <br>
+                <h2 class="text-primary" style="font-size: 36px;">Air Quality Index for: <span th:text="${user_input.toUpperCase()}" th:remove="tag"></span></h2>
+                <p><strong>Precise Location Name: </strong><span th:text="${city.getName()} ? ${city.getName()} : 'Station Name Unavailable' " th:remove="tag"></span></p>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Timestamp</th>
+                            <th scope="col">Air Quality Index</th>
+                            <th scope="col">CO</th>
+                            <th scope="col">NO2</th>
+                            <th scope="col">O3</th>
+                            <th scope="col">PM10</th>
+                            <th scope="col">PM25</th>
+                            <th scope="col">SO2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td th:text="${city.getTimestamp()} ? ${city.getTimestamp()} : '---'"></td>
+                            <td th:text="${city.getAqi()} ? ${city.getAqi()} : '---'"></td>
+                            <td th:text="${city.getCo()} ? ${city.getCo()} : '---' "></td>
+                            <td th:text="${city.getNo2()} ? ${city.getNo2()} : '---'"></td>
+                            <td th:text="${city.getO3()} ? ${city.getO3()} : '---'"></td>
+                            <td th:text="${city.getPm10()} ? ${city.getPm10()} : '---'"></td>
+                            <td th:text="${city.getPm25()} ? ${city.getPm25()} : '---'"></td>
+                            <td th:text="${city.getSo2()} ? ${city.getSo2()} : '---'"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<br>
+<img src="https://imgtr.ee/images/2023/04/07/kPShJ.jpg" alt="Sample Image" style="display: block; margin: 0 auto; max-width: 60%;">
+
+ <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
