@@ -25,6 +25,11 @@
         <selenium.jupiter.version>3.4.0</selenium.jupiter.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
+
+        <sonar.organization>mschonhofer</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
+
     </properties>
 
     <dependencies>
